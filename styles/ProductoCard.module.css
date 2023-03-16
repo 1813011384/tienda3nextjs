@@ -1,0 +1,40 @@
+.card{
+    position: relative;
+    width: 310px;
+    height: 510px;
+    background: rgb(241, 241, 241);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 50px gray;
+    padding-bottom: 50px;
+}
+
+.card .imagen{
+    position: relative;
+    width: 100%;
+    height: 210px;
+}
+
+.card .title{
+    font-size: 19px;
+    font-weight: 700;
+    color: steelblue;
+}
+
+.card .precio{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.card .verdetalle{
+    padding: 15px;
+    text-decoration: none;
+    background: cornflowerblue;
+    color: white;
+    font-size: 15px;
+}

@@ -1,0 +1,42 @@
+.container{
+    position: relative;
+    top: 80px;
+    left: 0px;
+    width: 100vw;
+    height: 480px;
+    background: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.container .ubicacion{
+    position: relative;
+    width: 55%;
+    height: 100%;
+}
+
+.container .ubicacion iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.container .info{
+    position: relative;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.container .info .paraimage{
+    position: relative;
+    width: 280px;
+    height: 40px;
+    margin-top: 40px;
+}

@@ -1,0 +1,132 @@
+.container{
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    /*background: green;*/
+    z-index: 999;
+}
+
+.container .items{
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: white;
+}
+
+.container .items .item{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .items .item:nth-child(2){
+    flex: 5;
+}
+
+.container .items .item:first-child ion-icon{
+    font-size: 50px;
+    color: lightgreen;
+}
+
+.container .items .item:first-child .wspnumber{
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.container .items .item:nth-child(2) a{
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+
+.container .items .item .cart{
+    position: relative;
+}
+
+.container .items .item .cart ion-icon{
+    font-size: 28px;
+    color: blue;
+}
+
+.container .items .item .cart .number{
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: blue;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: white;
+    border-radius: 50%;
+}
+
+.container .items .item .d .btnparadropdown{
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.container .items .item .d .btnparadropdown ion-icon{
+    font-size: 25px;
+}
+
+.container .items .item .d{
+    position: relative;
+}
+
+
+
+.container .items .item .d .btnparadropdown .dropdown{
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    display: none;
+    width: 250px;
+    height: fit-content;
+    z-index: 2000;
+    background: white;
+    color: black;
+    padding: 10px;
+}
+
+.container .items .item .d .btnparadropdown .dropdown div{
+    position: relative;
+    width: 100%;
+    padding: 5px;
+}
+
+.container .items .item .d .btnparadropdown .dropdown div button{
+    border: none;
+    background: cornflowerblue;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.container .items .item .d .btnparadropdown:hover .dropdown{
+    display: block;
+}
+
+.container .items .item .btndropdowncategorias{
+    cursor: pointer;
+}
+
+.container .dropdowncategorias{
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    width: 100vw;
+    height: 150px;
+    background: rgba(66, 66, 66, 0.8);
+}
+
+
+

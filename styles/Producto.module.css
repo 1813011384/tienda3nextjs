@@ -1,0 +1,71 @@
+.container{
+    position: relative;
+    top: 80px;
+    left: 0px;
+    width: 100vw;
+    min-height: calc(100vh - 80px);
+    display: grid;
+    grid-template-columns: 10fr 8fr;
+}
+
+.container .imagen{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .info{
+    position: relative;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+}
+
+.container .info .nombre{
+    font-size: 20px;
+    font-weight: 700;
+    color: cornflowerblue;
+}
+
+.container .info .desc{
+    position: relative;
+    width: 200px;
+    color: black;
+}
+
+.container .info .desc div:first-child{
+    font-weight: bold;
+}
+
+.container .info .precio{
+    font-weight: 700;
+}
+
+.container .info .btnagregaralc{
+    border: none;
+    padding: 10px;
+    background: cornflowerblue;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container .info .boxcantidad input{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border: solid 2px gray;
+    outline: none;
+    transition: 0.1s;
+    padding: 5px;
+}
+
+.container .info .boxcantidad input[type= number]:focus{
+    border: solid 2px cornflowerblue;
+}

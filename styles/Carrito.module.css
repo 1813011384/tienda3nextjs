@@ -1,0 +1,89 @@
+.container{
+    position: relative;
+    top: 80px;
+    left: 0px;
+    width: 100vw;
+    min-height: calc(100vh - 80px);
+    
+}
+
+.container .wrapper{
+    position: relative;
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .wrapper table{
+    background: white;
+    color: black;
+    width: 1200px;
+}
+
+.container .wrapper table thead tr{
+    background: cornflowerblue;
+    font-weight: bold;
+    color: white;
+    height: 40px;
+}
+
+.container .wrapper table thead tr td,
+.container .wrapper table tbody tr td{
+    padding: 10px;
+}
+
+.container .total{
+    position: relative;
+    width: 250px;
+    height: 40px;
+    background: yellow;
+    font-size: 18px;
+    margin-left: 50px;
+}
+
+.container .realizarcompra{
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    background: cornflowerblue;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container .vaciarcarrito{
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    background: mediumaquamarine;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.container .wrapper table tbody tr td button{
+    border: none;
+    width: 20px;
+    height: 20px;
+    background: cornflowerblue;
+    color: white;
+    cursor: pointer;
+}
+
+.container .wrapper table tbody tr td .btneliminar{
+    border: none;
+    width: 80px;
+    height: 40px;
+    background: cornflowerblue;
+    color: white;
+    cursor: pointer;
+}

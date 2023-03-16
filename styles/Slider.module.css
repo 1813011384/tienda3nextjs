@@ -1,0 +1,42 @@
+.container{
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+}
+
+.container .slides{
+    position: relative;
+    width: calc(4 * 100vw);
+    height: 100%;
+    display: flex;
+    transition: 0.5s ease;
+}
+  
+.container .slides .slide{
+    position: relative;
+    width: 100vw;
+    height: 100%;
+}
+  
+.container .slides .slide img{
+    object-fit: cover;
+}
+
+.container .left{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    color: white;
+    font-size: 80px;
+    cursor: pointer;
+}
+
+.container .right{
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    color: white;
+    font-size: 80px;
+    cursor: pointer;
+}
