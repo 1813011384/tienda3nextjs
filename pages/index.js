@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Slider from '../components/Slider.jsx';
 import Productosmasvendidos from '../components/Productosmasvendidos.jsx';
 import axios from 'axios';
+import { apiurl } from '../utils/apiurl.js';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,7 @@ export default function Home({ productos }) {
 }
 
 export const getServerSideProps = async function(){
-  const res= await axios.get("http://localhost:8800/api/productos?n=6");
+  const res= await axios.get(apiurl+"/api/productos?n=6");
 
   return {
       props: {

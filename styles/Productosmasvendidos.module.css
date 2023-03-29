@@ -1,9 +1,23 @@
 .container{
+   position: relative;
+   top: 0px;
+   left: 0px;
+   width: 100vw;
+   height: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 20px;
+   gap: 10px;
+}
+
+.container .container2{
     position: relative;
     top: 0px;
     left: 0px;
     width: 100vw;
-    height: auto;
+    height: 1200px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;

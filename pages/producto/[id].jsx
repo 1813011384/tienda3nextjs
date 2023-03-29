@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import styles from "../../styles/Producto.module.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { agregarelementoalcarrito, vaciarelcarrito } from '../../redux/carritoSlice';
+import { apiurl } from '../../utils/apiurl';
 
 const Producto = ({ prod }) => {
 
@@ -23,7 +24,7 @@ const Producto = ({ prod }) => {
             <div className={styles.desc}>
                 <div>Descripción:</div> <br />
                  {prod.desc.split("-").map(function(d, key){
-                    return (<div key={key}> {d} </div>);
+                    return (<><div key={key}> {d} </div> <hr /></>);
                 })} 
             </div>
             <div className={styles.precio}>Precio: S/{prod.precio} </div>
@@ -41,7 +42,7 @@ export default Producto
 
 export const getServerSideProps = async function({ params }){
     //console.log(params);
-    const res= await axios.get("http://localhost:8800/api/productos/find/"+params.id);
+    const res= await axios.get(apiurl+"/api/productos/find/"+params.id);
   
     return {
         props: {

@@ -6,6 +6,7 @@ import Router from 'next/router';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { addusuariopersonaactual } from '@/redux/userSlice';
+import { apiurl } from '../../utils/apiurl';
 
 const Iniciarsesion = () => {
 
@@ -16,7 +17,7 @@ const Iniciarsesion = () => {
 
   const handleSubmit= async function(e){
     e.preventDefault();
-    const res= await axios.post("http://localhost:8800/api/auth/login", { email: email, password: password }, { withCredentials:true });
+    const res= await axios.post(apiurl+"/api/auth/login", { email: email, password: password }, { withCredentials:true });
     console.log(res.data);
     dispatch(addusuariopersonaactual( res.data ));
     Router.push("/");
@@ -30,8 +31,8 @@ const Iniciarsesion = () => {
         </div>
         <div className={styles.formbox}>
           <form onSubmit={handleSubmit}>
-            <input type="email" placeholder='Email' onChange={function (e) { setEmail(e.target.value) }} />
-            <input type="password" placeholder='Password' onChange={function (e) { setPassword(e.target.value) }} />
+            <input type="email" required placeholder='Email' onChange={function (e) { setEmail(e.target.value) }} />
+            <input type="password" required minLength="5" placeholder='Password' onChange={function (e) { setPassword(e.target.value) }} />
             <input type="submit" value="Login" />
           </form>
           <Link href="#" passHref>Olvidé mi contraseña</Link>

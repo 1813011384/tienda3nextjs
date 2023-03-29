@@ -9,11 +9,15 @@ const Productosmasvendidos = ({productos}) => {
     
   return (
     <div className={styles.container}>
+      <h2>Algunos de nuestros productos</h2>
+      <div className={styles.container2}>
         {productos.map(function(p, index){
-            return (
-                <ProductoCard key={index} producto={p}/>
-            );
-        })}
+              return (
+                  <ProductoCard key={index} producto={p}/>
+              );
+          })}
+      </div>
+        
     </div>
   )
 }

@@ -3,6 +3,8 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import styles from "../../styles/Productosdedetcat.module.css";
 import Pagination from '../../components/Pagination.jsx';
+import { apiurl } from '../../utils/apiurl.js';
+import Image from 'next/image.js';
 
 const Productosdedetcat = ({ productosdedetcat }) => {
 
@@ -22,10 +24,7 @@ const Productosdedetcat = ({ productosdedetcat }) => {
     return (
         <div className={styles.container}>
             <div className={styles.filtros}>
-                <h2>Filtros</h2>
-                <div className={styles.filtro}>
-                    <span>Rango de precios</span> <br />
-                </div>
+                <Image src="/img/ii2v.png" width="200" height="790" alt=''/>
             </div>
             <div className={styles.pddcyp}>
                 <div className={styles.productosdedetcat}>
@@ -45,7 +44,7 @@ export default Productosdedetcat
 
 export const getServerSideProps = async function ({ params }) {
     //console.log(params);
-    const res = await axios.get("http://localhost:8800/api/productos/findbyidcat/" + params.id);//id es idcat
+    const res = await axios.get(apiurl+"/api/productos/findbyidcat/" + params.id);//id es idcat
 
     return {
         props: {

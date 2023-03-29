@@ -9,6 +9,7 @@ import { addusuariopersonaactual, vaciarusuariopersonaactual } from '@/redux/use
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import Categorias from './Categorias';
+import { apiurl } from '@/utils/apiurl';
 
 
 const Navbar = () => {
@@ -21,7 +22,7 @@ const Navbar = () => {
   const usuariopersonaactual = useSelector(function (state) { return state.user.usuariopersonaactual });
 
   const handleCerrarsesion= async function(){
-    const res= await axios.post("http://localhost:8800/api/auth/logout");
+    const res= await axios.post(apiurl+"/api/auth/logout");
     dispatch(vaciarusuariopersonaactual());
     router.push("/");
   }

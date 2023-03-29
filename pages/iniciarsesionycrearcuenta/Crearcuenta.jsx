@@ -1,10 +1,11 @@
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 
 import React, { useState } from 'react'
 import styles from "../../styles/Crearcuenta.module.css";
+import { apiurl } from '../../utils/apiurl';
 
 const Crearcuenta = () => {
 
@@ -14,6 +15,8 @@ const Crearcuenta = () => {
   const [apellidos, setApellidos] = useState("");
   const [telefono, setTelefono] = useState("");
   const [file, setFile] = useState("");
+
+  const Router= useRouter();
 
   const handleSubmit= async function(e){
     e.preventDefault();
@@ -26,7 +29,7 @@ const Crearcuenta = () => {
     console.log(r.data.url);
     const url= r.data.url;
 
-    const re= await axios.get("http://localhost:8800/api/roles");
+    const re= await axios.get(apiurl+"/api/roles");
     const roles= re.data;
     let rolcliente={};
     roles.map(function(rol, k){
@@ -35,9 +38,9 @@ const Crearcuenta = () => {
       }
     });
     
-    const res= await axios.post("http://localhost:8800/api/auth/register", {email: email, password: password, nombres: nombres, apellidos: apellidos, telefono: telefono, imagen: url, idrol: rolcliente._id});
+    const res= await axios.post(apiurl+"/api/auth/register", {email: email, password: password, nombres: nombres, apellidos: apellidos, telefono: telefono, imagen: url, idrol: rolcliente._id});
     console.log(res.data);
-    alert("usuario creado");
+    alert("El usuario se ha creado correctamente.");
     Router.push("/iniciarsesionycrearcuenta/Iniciarsesion");
   }
 
@@ -49,12 +52,12 @@ const Crearcuenta = () => {
         </div>
         <div className={styles.formbox}>
           <form onSubmit={handleSubmit}>
-            <input type="text" placeholder='Nombres' onChange={function (e) { setNombres(e.target.value) }} />
-            <input type="text" placeholder='Apellidos' onChange={function (e) { setApellidos(e.target.value) }} />
-            <input type="text" placeholder='Telefono' onChange={function (e) { setTelefono(e.target.value) }} />
+            <input type="text" required placeholder='Nombres' onChange={function (e) { setNombres(e.target.value) }} />
+            <input type="text" required placeholder='Apellidos' onChange={function (e) { setApellidos(e.target.value) }} />
+            <input type="text" required placeholder='Telefono' onChange={function (e) { setTelefono(e.target.value) }} />
             <input type="file" onChange={ function(e){ setFile(e.target.files[0]) } }/>
-            <input type="email" placeholder='Email' onChange={function (e) { setEmail(e.target.value) }} />
-            <input type="password" placeholder='Password' onChange={function (e) { setPassword(e.target.value) }} />
+            <input type="email" required placeholder='Email' onChange={function (e) { setEmail(e.target.value) }} />
+            <input type="password" required minLength="5" placeholder='Password' onChange={function (e) { setPassword(e.target.value) }} />
             <input type="submit" value="Crear cuenta" />
           </form>
           <Link href="/iniciarsesionycrearcuenta/Iniciarsesion" passHref>Iniciar sesion</Link>

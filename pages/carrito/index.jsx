@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { agregarelementoalcarrito, vaciarelcarrito, disminuircantidaddeedcarrito, incrementarcantidaddeedcarrito, eliminarelementoalcarrito } from '../../redux/carritoSlice';
 import Image from 'next/image';
 import axios from 'axios';
+import { apiurl } from '../../utils/apiurl';
+import { useRouter } from 'next/router';
 
-const index = () => {
+const Index = () => {
 
     const dispatch= useDispatch();
 
@@ -22,11 +24,21 @@ const index = () => {
         total+= element.cantidad * element.precio;
     });
 
+    const Router= useRouter();
+
     const realizarcompra= async function(){
-        const res= await axios.post("http://localhost:8800/api/pasareladepago/realizarcompra", { carrito: carrito, usupersoactual: usupersoactual  });
+
+        if(usupersoactual){
+            /*const res= await axios.post(apiurl+"/api/pasareladepago/realizarcompra", { carrito: carrito, usupersoactual: usupersoactual  });
         //console.log(res);
 
-        dispatch(vaciarelcarrito());
+        dispatch(vaciarelcarrito());*/
+
+        Router.push("/realizarpago");
+        }else{
+            Router.push("/iniciarsesionycrearcuenta/Iniciarsesion");
+        }
+        
     }
 
   return (
@@ -66,4 +78,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import styles from "../styles/Categorias.module.css";
 import CategoriaCard from './CategoriaCard';
+import { apiurl } from '../utils/apiurl';
 
 const Categorias = () => {
 
@@ -9,7 +10,7 @@ const Categorias = () => {
 
     useEffect(function(){
         const getcategorias= async function(){
-            const res= await axios.get("http://localhost:8800/api/categorias");
+            const res= await axios.get(apiurl+"/api/categorias");
             setCategorias(res.data);
         }
         getcategorias();
